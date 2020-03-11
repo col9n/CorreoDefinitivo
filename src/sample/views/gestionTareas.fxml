@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.views.ControllerGestionTareas">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="tableViewGestionTareas" layoutX="16.0" layoutY="84.0" prefHeight="200.0" prefWidth="568.0">
+              <columns>
+                  <TableColumn maxWidth="323.0" prefWidth="80.0" text="Fecha">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="fecha" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn maxWidth="323.0" prefWidth="60.0" text="Hora">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="hora" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn maxWidth="323.0" prefWidth="60.0" text="Min">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="min" />
+                      </cellValueFactory>
+                  </TableColumn>
+                <TableColumn maxWidth="323.0" prefWidth="235.0" text="Tarea a realizar">
+                  <cellValueFactory>
+                      <PropertyValueFactory property="textoTarea" />
+                  </cellValueFactory>
+              </TableColumn>
+                  <TableColumn maxWidth="323.0" prefWidth="80.0" text="Estado">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="realizado" />
+                      </cellValueFactory>
+                  </TableColumn>
+              </columns>
+            </TableView>
+            <Label layoutX="249.0" layoutY="30.0" prefHeight="24.0" prefWidth="122.0" text="Tareas de usuarios" />
+            <Button layoutX="274.0" layoutY="304.0" mnemonicParsing="false" onAction="#borrarCuenta" text="Borrar" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

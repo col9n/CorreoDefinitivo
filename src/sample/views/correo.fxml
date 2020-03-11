@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+<?import modelos.Reloj?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.views.ControllerCorreo">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Correo">
+                    <items>
+                        <MenuItem fx:id="correo" mnemonicParsing="false" onAction="#nuevoCorreo" text="Nuevo Correo" />
+                        <MenuItem fx:id="cuenta" mnemonicParsing="false" onAction="#nuevoCuenta" text="Añadir cuenta" />
+                        <MenuItem fx:id="configuracion" mnemonicParsing="false" onAction="#configuracion" text="Configuracion" />
+                        <MenuItem fx:id="correoInbox" mnemonicParsing="false" onAction="#correoInbox" text="Correo Inbox" />
+                        <MenuItem fx:id="controlCuentas" mnemonicParsing="false" onAction="#controlCuentas" text="Control cuentas" />
+                        <MenuItem fx:id="crearTareas" mnemonicParsing="false" onAction="#crearTareas" text="Crear tareas" />
+                        <MenuItem fx:id="gestionTareas" mnemonicParsing="false" onAction="#gestionTareas" text="Gestion tareas" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <ToolBar prefHeight="40.0" prefWidth="200.0">
+            <items>
+                <Button fx:id="borrar" mnemonicParsing="false" onAction="#borrarMensaje" prefHeight="25.0" prefWidth="111.0" text="Borrar Mensaje" />
+                <Button fx:id="help" mnemonicParsing="false" onAction="#ayuda" text="Abrir ayuda" />
+                <Button fx:id="imprimeCorreo" mnemonicParsing="false" onAction="#imprimir" text="Imprimir Correo" />
+                <Button fx:id="imprimeCarpeta" mnemonicParsing="false" onAction="#imprimirCarpeta" text="Imprimir Carpeta" />
+                <Reloj fx:id="reloj" prefHeight="23.0" prefWidth="105.0" />
+            </items>
+        </ToolBar>
+        <AnchorPane prefHeight="450.0" prefWidth="640.0">
+            <children>
+                <SplitPane dividerPositions="0.2931854199683043" prefHeight="342.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                        <TreeView fx:id="treeView" prefHeight="340.0" prefWidth="221.0" />
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="400.0" prefWidth="550.0">
+                            <items>
+                                <TableView fx:id="tableViewCorreo" prefHeight="196.0" prefWidth="327.0">
+                                    <columns>
+                                        <TableColumn maxWidth="323.0" prefWidth="235.0" text="Remitente">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="remitente" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn maxWidth="445.0" prefWidth="256.0" text="Asunto">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="asunto" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+                                </TableView>
+                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                        <WebView fx:id="webView" prefHeight="158.0" prefWidth="448.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+                            </items>
+                        </SplitPane>
+                    </items>
+                </SplitPane>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

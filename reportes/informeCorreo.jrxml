@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="informeCorreo" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="56a72cc6-5cf4-40a7-9675-5e887bd19196">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="InformeJasperCorreo"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="date" class="java.util.Date">
+		<fieldDescription><![CDATA[date]]></fieldDescription>
+	</field>
+	<field name="contenido" class="java.lang.String">
+		<fieldDescription><![CDATA[contenido]]></fieldDescription>
+	</field>
+	<field name="asunto" class="java.lang.String">
+		<fieldDescription><![CDATA[asunto]]></fieldDescription>
+	</field>
+	<field name="remitente" class="java.lang.String">
+		<fieldDescription><![CDATA[remitente]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="189" y="24" width="180" height="30" uuid="22c7209a-4389-431f-aa42-f17097d7aa46"/>
+				<textElement>
+					<font size="20" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Informe de correo]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="450" y="0" width="100" height="30" uuid="dafca4a9-f29c-4a28-a027-1507eff83bad">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="03e9a833-cbc8-4541-a73f-44ba3f048271"/>
+				</reportElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="0" width="100" height="30" uuid="cb4cbf5c-7fa1-4551-9330-8cb87dc2dd5a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2a5bb079-b033-4227-bce8-7777fe119c0f"/>
+				</reportElement>
+				<text><![CDATA[Asunto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="7c29a5be-696c-477a-8ede-8b5a3100fb95">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a6dcba4c-2a6e-4373-9732-51bec676ceff"/>
+				</reportElement>
+				<text><![CDATA[Remitente]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="198" splitType="Stretch">
+			<textField>
+				<reportElement x="460" y="10" width="100" height="30" uuid="a26827d4-ee8a-4dbf-8507-edbfe181be6b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="03e9a833-cbc8-4541-a73f-44ba3f048271"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="50" width="550" height="148" uuid="d5365836-530e-49dd-a77d-dbae170461b8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46e43ea9-3a62-4576-9445-fbf628fff2f3"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{contenido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="10" width="100" height="30" uuid="e9820fbe-3432-4ba4-b277-e8693793ec76">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2a5bb079-b033-4227-bce8-7777fe119c0f"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{asunto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="10" width="160" height="30" uuid="4d602200-94ec-4d03-8652-4bd63b3b4737">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a6dcba4c-2a6e-4373-9732-51bec676ceff"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{remitente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
